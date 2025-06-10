@@ -37,4 +37,4 @@ def voice_command():
         except sr.RequestError:
             return "Sorry, Speech recognizattion is not available ."
         
-# Test the assistant
+# Test the assistant with a sample input
