@@ -22,4 +22,19 @@ def ai_assistant(imput_text):
     else:
         return "Error: Unable to get a response from the AI model."
 # Function to handle speech input using voice command function
-# def voice_command():
+def voice_command():
+    recognizer= sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening for your command...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+        try:
+            command = recognizer.recognize_google(audio)
+            print(f"You said: {command}")
+            return command  
+        except sr.UnknownValueError:
+            print("Sorry, I did not understand that.")
+        except sr.RequestError:
+            return "Sorry, Speech recognizattion is not available ."
+        
+# Test the assistant
