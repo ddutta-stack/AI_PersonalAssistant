@@ -22,3 +22,4 @@ def ai_assistant(imput_text):
     else:
         return "Error: Unable to get a response from the AI model."
 # Function to handle speech input using voice command function
+# def voice_command():
