@@ -1,4 +1,5 @@
 import requests
+import gradio as gr
 import speech_recognition as sr
 import pyttsx3
 ollama_url = "http://localhost:11434/api/generate"
@@ -37,8 +38,15 @@ def voice_command():
             return "Sorry, Speech recognizattion is not available ."
         
 # Test the assistant with a sample input
-if __name__ == "__main__":
-    sample_input = "Tell me a fun fact about space?"
-    print(ai_assistant(sample_input))
+# if __name__ == "__main__":
+#     sample_input = "Tell me a fun fact about space?"
+#     print(ai_assistant(sample_input))
     
 # Gradio interface for the AI assistantS
+interface = gr.Interface(
+    fn=ai_assistant,
+    inputs=gr.Textbox(label="Enter your question or command"),
+    outputs="text"
+    title="AI Assistant with Speech Recognition",
+    description="Ask questions or give commands to the AI assistant. You can also use voice input.",
+    
