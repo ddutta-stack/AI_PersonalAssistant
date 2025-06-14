@@ -46,7 +46,11 @@ def voice_command():
 interface = gr.Interface(
     fn=ai_assistant,
     inputs=gr.Textbox(lines=3,placeholder="Ask Anything", label="Enter your question or command"),
-    outputs="text"
+    outputs="text",
     title="AI Assistant with Speech Recognition",
     description="Ask questions or give commands to the AI assistant. You can also use voice input.",
-    live=True)
+    live=True
+    )
+#launch the Gradio interface webapp
+if __name__ == "__main__":
+    interface.launch()
