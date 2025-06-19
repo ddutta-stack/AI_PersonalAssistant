@@ -49,7 +49,7 @@ interface = gr.Interface(
     outputs="text",
     title="AI Assistant with Speech Recognition",
     description="Ask questions or give commands to the AI assistant. You can also use voice input.",
-    live=True
+    #live=True
     )
 #launch the Gradio interface webapp
 if __name__ == "__main__":
