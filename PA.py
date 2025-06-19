@@ -36,9 +36,9 @@ def voice_command():
         except sr.RequestError:
             return "Sorry, Speech recognizattion is not available ."
         
-# Test the assistant with a sample input
+# Test the assistant with a sample input directly using the console
+# This is a simple test to see if the function works without the web interface.
 if __name__ == "__main__":
     sample_input = "Tell me a fun fact about space?"
     print(ai_assistant(sample_input))
     
-# Gradio interface for the AI assistantS
