@@ -6,7 +6,8 @@ ollama_url = "http://localhost:11434/api/generate"
 #text to speech engine
 engine = pyttsx3.init()
 def ai_assistant(imput_text):
-    prompt = f"Answer the following question:\n {imput_text}"
+   # prompt = f"Answer the following question:\n {imput_text}"
+    prompt = f"Act as a helpful AI assistant. If the user asks for weather report, pleas fetch it. {imput_text}"
     payload = {
         "model":"deepseek-r1:1.5b",
         "prompt": prompt,
