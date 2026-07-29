@@ -15,7 +15,7 @@ def ai_assistant(imput_text):
     }
     response = requests.post(ollama_url, json=payload)
     if response.status_code == 200:
-        ai_response = response.json().get("response", "I don't know the answer to that.")
+        ai_response = response.json().get("response", "Sorry, I don't know the answer to this.")
     # Convert the response to speech
         engine.say(ai_response)
         engine.runAndWait()
