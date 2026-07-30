@@ -5,9 +5,9 @@ import pyttsx3
 ollama_url = "http://localhost:11434/api/generate"
 #text to speech engine
 engine = pyttsx3.init()
-def ai_assistant(iput_text):
-   # prompt = f"Answer the following question:\n {iput_text}"
-    prompt = f"Act as a helpful AI assistant. If the user asks for weather report, pleas fetch it. {imput_text}"
+def ai_assistant(input_text):
+   # prompt = f"Answer the following question:\n {input_text}"
+    prompt = f"Act as a helpful AI assistant. If the user asks for weather report, pleas fetch it. {input_text}"
     payload = {
         "model":"deepseek-r1:1.5b",
         "prompt": prompt,
@@ -31,7 +31,7 @@ def voice_command():
         audio = recognizer.listen(source)
         try:
             command = recognizer.recognize_google(audio)
-            print(f"You said: {command}")
+            print(f"You said this: {command}")
             return command  
         except sr.UnknownValueError:
             print("Sorry, I did not understand that.")
