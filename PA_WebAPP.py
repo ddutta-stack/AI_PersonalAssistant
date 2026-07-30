@@ -5,8 +5,8 @@ import pyttsx3
 ollama_url = "http://localhost:11434/api/generate"
 #text to speech engine
 engine = pyttsx3.init()
-def ai_assistant(imput_text):
-   # prompt = f"Answer the following question:\n {imput_text}"
+def ai_assistant(iput_text):
+   # prompt = f"Answer the following question:\n {iput_text}"
     prompt = f"Act as a helpful AI assistant. If the user asks for weather report, pleas fetch it. {imput_text}"
     payload = {
         "model":"deepseek-r1:1.5b",
@@ -46,7 +46,7 @@ def voice_command():
 # Gradio interface for the AI assistantS
 interface = gr.Interface(
     fn=ai_assistant,
-    inputs=gr.Textbox(lines=3,placeholder="Ask Anything", label="Enter your question or command"),
+    inputs=gr.Textbox(lines=3,placeholder="Ask Anything", label="Enter your questions or command"),
     outputs="text",
     title="AI Assistant with Speech Recognition",
     description="Ask questions or give commands to the AI assistant. You can also use voice input.",
